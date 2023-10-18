@@ -4,7 +4,7 @@
  * jack_bauer - prints every minute of the day starting from midnight
  * to midnight
  *
- * Return: void 
+ * Return: void
  */
 
 void jack_bauer(void)
