@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * reset_to_98 : function that tales a pointer to an int as parameter
- * @n: number int
+ * reset_to_98 - function that tales a pointer to an int as parameter
+ * @n: pointer to n
  *
  * Return : void
  */
