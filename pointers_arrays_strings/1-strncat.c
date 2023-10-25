@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*_strncar - function that concatenates two strings
+*_strncat - function that concatenates two strings
 *@src: source
 *@dest: destination
 *@n: nombre de bytes
@@ -16,10 +16,10 @@ char *_strncat(char *dest, char *src, int n)
 
 	for (length = 0; dest[length] != '\0'; length++)
 	;
-	
+
 	for (; i < n && src[i] != '\0'; i++)
 	{
-			dest[length + i] = src[i];
+		dest[length + i] = src[i];
 	}
 
 	for (length = 0; dest[length] != '\0'; length++)
