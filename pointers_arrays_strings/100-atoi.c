@@ -9,8 +9,18 @@
 
 int _atoi(char *s)
 {
-	int i;
+	int i = 0;
+	int signe = 1;
+	int resultat = 0;
 
-	i = *s++;
-	return (i);
+	if (s[0] == '-')
+	{
+		signe = -1;
+		i++;
+	}
+
+	for (; s[i] != '\0'; ++i)
+		resultat = resultat * 10 + s[i] - '0';
+
+	return (signe * resultat);
 }
