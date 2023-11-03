@@ -7,7 +7,7 @@
 *@argv: value
 *@argc: number
 *
-*Return: 0 et 1
+*Return: 0
 */
 
 int main(int argc, char **argv)
@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	if (argc == 1)
 	{
 		printf("0\n");
+		return (0);
 	}
 	else
 	{
