@@ -3,8 +3,9 @@
 
 /**
 *main - program that multiplies two numbers
-*
-*Return: 1
+*@argc: number
+*@argv: value
+*Return: 1 or 0
 */
 
 int main(int argc, char **argv)
