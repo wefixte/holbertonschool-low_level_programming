@@ -19,7 +19,7 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	array = calloc(height, sizeof(int *));
+	array = malloc(sizeof(int *) * height);
 	/*allocate memory to hold "height" number of pointers to intergers*/
 
 	if (array == NULL)
@@ -28,7 +28,7 @@ int **alloc_grid(int width, int height)
 
 	for (i = 0; i < height; i++)
 	{
-		array[i] = calloc(width, sizeof(int));
+		array[i] = malloc(sizeof(int) * width);
 		if (array[i] == NULL)
 		{
 		/*if allocation not successful, free allocated memory*/
