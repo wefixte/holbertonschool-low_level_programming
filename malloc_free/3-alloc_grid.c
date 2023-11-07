@@ -39,5 +39,11 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < height; j++)
+			array[i][j] = 0;
+	}
+	/*initialisation à 0 sans calloc*/
 	return (array);
 }
