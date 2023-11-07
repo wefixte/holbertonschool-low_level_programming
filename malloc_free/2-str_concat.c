@@ -13,20 +13,30 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *s3;
-	int i, len1, len2, len3;
+	int i, j, len1, len2, len3;
+
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
 	len1 = strlen(s1);
 	len2 = strlen(s2);
-	len3 = len1 + len2 +1;
+	len3 = len1 + len2 + 1;
 
 	s3 = malloc(len3);
+
+	if (s3 == NULL)
+		return (NULL);
 
 	for (i = 0; i < len1; i++)
 	{
 		s3[i] = s1[i];
 	}
-	for (i = 0; i < len2; i++)
+	for (j = 0; j < len2; j++)
 	{
-		s3[i + len1] = s2[i];
+		s3[i + j] = s2[j];
 	}
 	s3[len3 - 1] = '\0';
 
