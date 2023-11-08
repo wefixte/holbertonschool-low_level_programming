@@ -48,5 +48,4 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s3[lenght3 - 1] = '\0';
 
 	return (s3);
-	free(s3);
 }
