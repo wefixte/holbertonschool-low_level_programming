@@ -16,8 +16,8 @@ char *create_array(unsigned int size, char c)
 
 	if (size == 0)
 		return (NULL);
-	array = (char *)malloc(size * sizeof(char));
-	/**allocate memory to have 'size' number of char & give a pointer*/
+	array = malloc(sizeof(char) * size);
+	/**allocate memory to have 'size' number of char*/
 	if (array == NULL)
 		return (NULL);
 	for (; i < size; i++)

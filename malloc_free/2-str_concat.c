@@ -24,6 +24,7 @@ char *str_concat(char *s1, char *s2)
 	len1 = strlen(s1);
 	len2 = strlen(s2);
 	len3 = len1 + len2 + 1;
+	/*+1 for the '\0'*/
 
 	s3 = malloc(len3);
 
@@ -34,10 +35,12 @@ char *str_concat(char *s1, char *s2)
 	{
 		s3[i] = s1[i];
 	}
+
 	for (j = 0; j < len2; j++)
 	{
 		s3[i + j] = s2[j];
 	}
+	
 	s3[len3 - 1] = '\0';
 
 	return (s3);

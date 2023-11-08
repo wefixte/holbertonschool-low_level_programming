@@ -20,7 +20,8 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 
 	array = malloc(sizeof(int *) * height);
-	/*allocate memory to hold "height" number of pointers to intergers*/
+	/*Outer loop -> allocate the memory for height number of pointers (int *)*/
+	/*Chacun de ses pointeurs pointe vers un tableau d'entiers*/
 
 	if (array == NULL)
 		return (NULL);
@@ -29,6 +30,7 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		array[i] = malloc(sizeof(int) * width);
+		/*alloue la mémoire pour la largeur du nombre d'entiers de chaque ligne*/
 		if (array[i] == NULL)
 		{
 		/*if allocation not successful, free allocated memory*/
