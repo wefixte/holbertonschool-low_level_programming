@@ -4,7 +4,7 @@
 
 /**
  * free_dog - function that frees dogs
- * @d: pointer structure
+ * @d: pointer structur
 */
 
 void free_dog(dog_t *d)
