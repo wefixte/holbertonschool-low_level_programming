@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	}
 	/*if operator not add, sub, mul, div ou modulo*/
 
-	if ((argv[2][0] == '/' || argv[2][0] == '%') && (num1 == '0' || num2 == '0'))
+	if ((argv[2][0] == '/' || argv[2][0] == '%') && argv[3][0] == '0')
 	{
 		printf("Error\n");
 		exit(100);
