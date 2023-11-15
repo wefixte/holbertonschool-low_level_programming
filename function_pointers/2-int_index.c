@@ -5,7 +5,7 @@
  * @array: tableau
  * @size: nombre d'elements dans array
  * @cmp: function pointer
- * Return: int
+ * Return: int or -1
 */
 
 int int_index(int *array, int size, int (*cmp)(int))
@@ -17,9 +17,8 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	for (i = 0; i < size; i++)
 	{
-		if(cmp(array[i] != 0))
+		if (cmp(array[i]) != 0)
 			return (i);
 	}
-
 	return (-1);
 }
