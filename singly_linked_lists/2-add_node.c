@@ -2,14 +2,15 @@
 
 /**
  * add_node - function that adds a new node at the beginning of a list
- * @headerfile:
- * @str:
- * Return:
+ * @head: original first node
+ * @str: node string
+ * Return: new node
 */
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t * new_node;
+	list_t *new_node;
+
 	new_node = malloc(sizeof(list_t));
 
 	if (new_node == NULL)
