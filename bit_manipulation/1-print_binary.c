@@ -7,18 +7,19 @@
 
 void print_binary(unsigned long int n)
 {
-	int index, bit;
-	unsigned long int temp = n, value;
+	int i, bits = 0;
+	unsigned long int temp = n, bitValue;
 
 	while (temp >>= 1)
 	{
-		bit++;
+		bits++;
 	}
 
-	for (index = bit; index >= 0; index--)
+	for (i = bits; i >= 0; i--)
 	{
-		value = (n >> index) & 1;
-		if (value == 1)
+		bitValue = (n >> i) & 1;
+
+		if (bitValue == 1)
 		{
 			putchar('1');
 		}
