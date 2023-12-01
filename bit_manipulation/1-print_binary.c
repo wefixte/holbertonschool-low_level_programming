@@ -11,7 +11,9 @@ void print_binary(unsigned long int n)
 	unsigned long int temp = n, value;
 
 	while (temp >>= 1)
+	{
 		bit++;
+	}
 
 	for (index = bit; index >= 0; index--)
 	{
