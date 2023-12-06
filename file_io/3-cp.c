@@ -9,8 +9,8 @@
 
 int main(int argc, char **argv)
 {
-	/*argv[0]=prog ; argv[1]=file_source; argv[2]=file_destination*/
-	int file_source, file_destination;
+	int file_source, file_destination, read_file, write_file;
+	char buffer[1024]; /*blocs of 1024 bytes*/
 
 	if (argc != 3)
 	{
@@ -24,11 +24,29 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	file_destination = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
+	while ((read_file = read(file_source, buffer, sizeof(buffer))) > 0)
+	{
+		write_file = write(file_destination, buffer, read_file);
+		if (write_file != read_file)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	}
+	if (close(file_source) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_source);
+		exit(100);
+	}
+	if (close(file_destination) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_destination);
+		exit(100);
+	}
+	return (0);
 }
