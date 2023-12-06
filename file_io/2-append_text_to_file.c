@@ -2,8 +2,8 @@
 
 /**
  * append_text_to_file -  unction that appends text at the end of a file
- * @filename:
- * @text_content:
+ * @filename: pointer to the name of file to create
+ * @text_content: pointer
  * Return: 1 on success, -1 on failure
 */
 
@@ -23,7 +23,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		while (text_content[text_length] != '\0')
 			text_length++;
-		
+
 		write_file = write(file, text_content, text_length);
 		if (write_file != text_length)
 		{
@@ -34,3 +34,4 @@ int append_text_to_file(const char *filename, char *text_content)
 	close(file);
 	return (1);
 }
+
