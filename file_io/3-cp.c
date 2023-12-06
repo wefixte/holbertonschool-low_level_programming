@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 	if (file_destination < 0)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+		close(file_source);
 		exit(99);
 	}
 
@@ -38,8 +39,18 @@ int main(int argc, char **argv)
 		if (write_file != read_file)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(file_source);
+			close(file_destination);
 			exit(99);
 		}
+	}
+
+	if (read_file < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(file_source);
+		close(file_destination);
+		exit(98);
 	}
 
 	if (close(file_source) < 0 || close(file_destination) < 0)
